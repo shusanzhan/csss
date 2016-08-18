@@ -1,0 +1,80 @@
+/*comm*/
+.icon_loading_b{background:url(../images/bizmail/ico_loading2087790.gif) no-repeat scroll 0 0;height:32px;width:32px;}
+.editIcon{background:url(../images/bizmail/icon_action1369aa.png) no-repeat scroll -94px 0px;height:16px;width:16px;}
+.icon_successful{background:url(../images/newicon/prompt087793.gif) no-repeat scroll -160px 0 transparent;height:31px;width:31px;}
+.icon_failed{background:url(../images/newicon/prompt087793.gif) no-repeat scroll -192px 0 transparent;height:31px;width:31px;}
+.icon_finish_b, .icon_finish_m, .icon_finish_s, .icon_info_b, .icon_info_m, .icon_info_s, .icon_error_b, .icon_error_m, .icon_error_s, .icon_wait_b, .icon_wait_m, .icon_wait_s, .icon_caution_b, .icon_caution_m, .icon_caution_s, .icon_help_m, .icon_help_s{display:inline-block;overflow:hidden;background:url(../images/bizmail/prompt0fc00c.gif) no-repeat;}
+.icon_finish_b{background-position:0 0;height:32px;width:32px;}
+.icon_finish_m{background-position:0 -32px;height:16px;width:16px;}
+.icon_finish_s{background-position:0 -48px;height:12px;width:12px;}
+.icon_info_b{background-position:-64px 0;height:32px;width:32px;}
+.icon_info_m{background-position:-32px -32px;height:16px;width:16px;}
+.icon_info_s{background-position:-24px -48px;height:12px;width:12px;}
+.icon_error_b{background-position:-32px 0;height:32px;width:32px;}
+.icon_error_m{background-position:-16px -32px;height:16px;width:16px;}
+.icon_error_s{background-position:-12px -48px;height:12px;width:12px;}
+.icon_wait_b{background-position:-96px 0;height:32px;width:32px;}
+.icon_wait_m{background-position:-48px -32px;height:16px;width:16px;}
+.icon_wait_s{background-position:-36px -48px;height:12px;width:12px;}
+.icon_caution_b{background-position:-192px 0;height:32px;width:32px;}
+.icon_caution_m{background-position:-64px -32px;height:16px;width:16px;}
+.icon_caution_s{background-position:-72px -49px;height:12px;width:12px;}
+.icon_help_m{background-position:-80px -32px;height:16px;width:16px;}
+.icon_help_s{background-position:-60px -48px;height:12px;width:12px;}
+.ico_loading_dotted {display:inline-block;width:11px;height:12px;overflow:hidden;margin-left:2px;background:url(../images/bizmail/ico_loading_dotted098d46.gif) no-repeat scroll 0 9px;}
+.ico_loading_all{ width:32px; height:32px; display:block; margin:0 auto; background:url(../images/ico_loading2087795.gif) no-repeat center center;}
+.ico_attbig {background:url(../images/newicon/compose127dee.gif) no-repeat -16px 1px;*background-position:-16px 0;width:16px;height:16px;padding:0;border:none;margin:0 1px 0 0;_margin-top:-17px;}
+.ico_recover,.ico_recoversuccee{background:url(../images/bizmail/ico_recover171465.png) no-repeat;display: inline-block;width: 14px;height: 13px;cursor: pointer;position: relative;top: 2px;_top: 0px;overflow: hidden;
+}
+
+
+/* ==============按钮============= */
+a.disabled:link, a.disabled:visited, a.disabled:hover, a.disabled:active,
+input.disabled{background:#EEE!important; color:#A0A0A0!important;  cursor:default!important; }
+.select_item {line-height:26px;display:block;position:relative;_width:234px/*文字图标截断*/;padding:0 22px 0 5px;_padding-top:4px;_padding-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:default;*zoom:1;}
+.select_item:hover {background:#e0ecf9;text-decoration:none;border:none;}
+.select_item .addr_del {border-radius: 2px 2px 2px 2px;display: inline-block;height: 13px; margin: -1px 1px 0; overflow: hidden;position: absolute;right:5px;top:7px;width:13px;background:url(../images/bizmail/ico_biz0c07e5.png) no-repeat -60px 3px;filter:alpha(opacity=50);opacity:0.5;cursor:pointer;}
+.select_item:hover .addr_del {filter:alpha(opacity=100);opacity:1;}
+
+/* CSS Reset */
+body {margin:0;padding:0;font-size:12px;font-family:"lucida Grande",Verdana;background-color:#efefef;}
+ul,li{list-style:none;margin:0;padding:0;}
+p,dl,dd,form {margin:0; padding:0;}
+input,textarea,a {outline:none;}
+input,textarea {font-family:"lucida Grande",Verdana;}
+textarea {width:540px;border:1px solid #718da6;padding:3px;font-size:12px;font-family:"lucida Grande",Verdana; resize:none;}
+img {border:0;}
+a {color:#1e5494;text-decoration:none;cursor:pointer;outline:none;}
+a:hover {text-decoration:underline;}
+h1,h2,h3,h4,h5,h6 {margin:0;font-weight:bold;}
+h3{font-size:14px;}
+h2{font-size:18px;}
+header,section,article,aside,nav{display:block;}
+section{ overflow:hidden; _zoom:1;}
+input.txt {padding:0 0 0 2px;line-height:20px;*line-height:21px;}
+input.txt,input.txt2,textarea.txt,.txt,.qm_txt {border:1px solid #bfbfbf;border-top:1px solid #C0C0C0; background:#fff; outline:none;line-height:24px;height:24px;font-size:14px;font-weight:lighter;}
+
+/*.listTable .t_obj a{ position:static;}*/
+#rightMain .submitColumn{padding-left:115px;}
+.add_mbr_lable{position:absolute;left:0px;top:8px;_left:-100px;}
+.listTable .th_date{ height:20px; line-height:20px; background:#ddd;}
+.listTable .th_date:hover{ background:#ddd;}
+.th_date span{ color:#333;}
+.icon_diff,.icon_G{display:inline-block;width:16px; height:16px; background:url(../images/bizmail/rtx_icon15b7ad.png) no-repeat; margin:0px 8px 0 0;vertical-align:middle;margin-top:3px;*margin-top:7px;_margin-top:0px;}
+.icon_girl{ background-position:0px -32px;margin-left:2px;margin-top:0px;}
+.icon_man{ background-position:0 -16px;margin-left:2px;margin-top:0px;}
+.icon_none{ background-position:0 -110px;}
+.icon_party{ background-position:0px -48px;margin-left:1px;}
+.icon_group{ background-position:0px 0px;margin-top:4px;}
+.icon_group_s{ background-position:0px -96px;margin-top:4px;width:12px;height:12px;}
+.icon_G{ background-position:0px -80px;width:11px; height:11px; }
+.disable .icon_girl{ background-position:0 -64px;margin-left:2px;margin-top:0px;}
+.disable .icon_man{ background-position:0 -64px;margin-left:2px;margin-top:0px;}
+.ftn_root_wrap{ overflow:hidden; _zoom:1;}
+.ico_arrow_left {
+    background: url("../images/bizmail/arrow_left087790.gif") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 16px;
+    margin: 180px 5PX 0 5px;
+    width: 12px;
+    float: left;
+}

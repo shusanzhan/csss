@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">    	
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<package name="sys"  extends="struts-default">
+		<interceptors>
+			<interceptor name="configdebug" class="com.configdebug.interceptor.ConfigDebugInterceptor"/>
+			<interceptor-stack name="sys-stack">
+				<interceptor-ref name="configdebug"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="sys-stack" />
+		<global-results>
+			 <result name="login" type="redirect">/main/login</result>
+		     <result name="error">/error500.jsp</result>
+		     <result name="invalid.token">/token.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+		    <exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+		<action name="swfUpload" class="swfUploadAction">
+		  	 <result name="invalid.token">/pages/commons/token.jsp</result>
+		  	
+        </action>
+        <action name="compoent" class="compoentController">
+        	<result name="userSelect">/pages/compoent/userSelect.jsp</result>
+        	<result name="departmentSelect">/pages/compoent/departmentSelect.jsp</result>
+        	 <result name="uploadConpent">/pages/compoent/uploadConpent.jsp</result>
+        	 <result name="uploadConpentWechat">/pages/compoent/uploadConpent.jsp.jsp</result>
+        </action>
+        
+		<action name="main" class="mainAction">
+			<result name="login">/pages/login/login.jsp</result>
+			<result name="index">/pages/index/list.jsp</result>
+			<result name="salerContent">/pages/index/salerContent.jsp</result>
+			<result name="adminContent">/pages/index/adminContent.jsp</result>
+			<result name="mangerContent">/pages/index/mangerContent.jsp</result>
+			<result name="generalMangerContent">/pages/index/generalMangerContent.jsp</result>
+			<result name="wlbContent">/pages/index/wlbContent.jsp</result>
+			<result name="serviceContent">/pages/index/serviceContent.jsp</result>
+		</action>     
+		<action name="user" class="userAction">
+           <result name="add">/pages/sys/user/add.jsp</result>
+           <result name="list">/pages/sys/user/list.jsp</result>
+           <result name="edit">/pages/sys/user/edit.jsp</result>
+           <result name="userRole">/pages/sys/user/userRole.jsp</result>
+           <result name="editSelf">/pages/sys/user/editSelf.jsp</result>
+           <result name="modifyPassword">/pages/sys/user/modifyPassword.jsp</result>
+        </action>
+        <action name="userBussi" class="userBussiAction">
+           <result name="bussiList">/pages/sys/userBussi/bussiList.jsp</result>
+           <result name="edit">/pages/sys/userBussi/edit.jsp</result>
+           <result name="add">/pages/sys/userBussi/add.jsp</result>
+           <result name="userRole">/pages/sys/userBussi/userRole.jsp</result>
+        </action>
+ 		<action name="resource" class="resourceAction">
+           <result name="list">/pages/sys/resource/list.jsp</result>
+           <result name="edit">/pages/sys/resource/edit.jsp</result>
+           <result name="orderNum">/pages/sys/resource/orderNum.jsp</result>
+        </action>
+ 		<action name="role" class="roleAction">
+           <result name="list">/pages/sys/role/list.jsp</result>
+           <result name="edit">/pages/sys/role/edit.jsp</result>
+           <result name="roleResource">/pages/sys/role/roleResource.jsp</result>
+        </action>
+         <action name="department" class="departmentAction">
+         	 <result name="list">/pages/sys/department/list.jsp</result>
+             <result name="edit">/pages/sys/department/edit.jsp</result>
+         </action>
+           <action name="enterprise" class="enterpriseAction">
+         	<result name="enterprise">/pages/sys/enterprise/edit.jsp</result>
+         </action>  
+           <action name="systemInfo" class="systemInfoAction">
+         	<result name="systemInfo">/pages/sys/systemInfo/edit.jsp</result>
+         </action>  
+         
+         <action name="operateLog"  class="operateLogAction">
+         	<result name="list">/pages/sys/operateLog/list.jsp</result>
+         </action>
+         <action name="loginLog"  class="loginLogAction">
+         	<result name="list">/pages/sys/loginLog/list.jsp</result>
+         </action> 
+		
+		<!-- 系统内部通知信息 -->
+		<action name="message" class="messageAction">
+		</action>
+		<action name="userSub" class="userSubAction">
+			<result name="edit">/pages/sys/userSub/edit.jsp</result>
+			<result name="list">/pages/sys/userSub/list.jsp</result>
+		</action>
+		<action name="receiveMessageUser" class="receiveMessageUserAction">
+			<result name="edit">/pages/sys/receiveMessageUser/edit.jsp</result>
+			<result name="list">/pages/sys/receiveMessageUser/list.jsp</result>
+		</action>
+		<!-- 系统内部通知信息 -->
+		<action name="message" class="messageAction">
+		</action>
+		   <action name="area" class="areaAction">
+			<result name="edit">/pages/sys/area/edit.jsp</result>
+			<result name="list">/pages/sys/area/list.jsp</result>
+		</action>  
+    </package>
+</struts>

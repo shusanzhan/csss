@@ -1,0 +1,97 @@
+
+/* ---------- Reset ---------- */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	outline: 0px;
+}
+
+html {
+	_width: 100%;
+	_height: 100%;
+	-webkit-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	_filter: expression(document.execCommand("BackgroundImageCache", false, true));
+}
+
+body {
+	_width: 100%;
+	_height: 100%;
+	min-width: 1000px;
+	_width: expression(document.body.clientWidth <= 1000 ? "1000px": "auto");
+	font: 12px tahoma, Arial, Verdana, sans-serif;
+	color: #666666;
+	background-color: #ffffff;
+	_background-image: url(about: blank);
+	_background-attachment: fixed;
+}
+
+a {
+	color: #666666;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #ff6600;
+	text-decoration: none;
+}
+
+img {
+	vertical-align: middle;
+	image-rendering: optimizeQuality;
+	-ms-interpolation-mode: bicubic;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+input {
+	vertical-align: middle;
+	outline: none;
+}
+
+textarea {
+	outline: 0px;
+	resize: none;
+}
+
+.bar {
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #d7e8f8;
+	background-color: #eff7ff;
+}
+
+strong {
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+table {
+	width: 100%;
+}
+
+table th {
+	font-weight: bold;
+	text-align: left;
+}
+
+table td, table th {
+	line-height: 30px;
+	padding: 0px 4px;
+	font-size: 10pt;
+	color: #000000;
+}
+
+.separated th, .separated td {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}

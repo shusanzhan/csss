@@ -1,0 +1,2 @@
+.kinMaxShow{width:100%;height:160px; visibility:hidden; overflow:hidden;}
+.kinMaxShow p.title{ position:absolute; left:0; bottom:0; text-indent:10px; line-height:30px;font-family:Verdana; color:#FFF; display:block;width:100%; height:30px; font-family:14px;filter:progid:DXImageTransform.Microsoft.gradient(startcolorstr=#aa000000,endcolorstr=#aa000000);background:rgba(0,0,0,0.5);}

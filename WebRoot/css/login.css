@@ -1,0 +1,91 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	background:url(../images/login/loginbg.jpg);
+}
+body, h1, h2, h3, p, div, dl, dt, dd, ul, ol, li, table, th, td, form, button, input, textarea, legend, hr {
+    margin: 0;
+    padding: 0;
+}
+div, li, ul, dl, dd, dt {
+    width: auto;
+}
+.mainbg {
+	background:url(../images/login/logincenterbg_02_02.png) repeat-x;
+}
+.clear{
+	clear: both;
+}
+.title {
+	width:350px;
+	margin:0 auto;
+	color:#FFF;
+    font-size:30px;
+	clear:both;
+}
+.container {
+	width:950px;
+	min-height:300px;
+	margin:0 auto;
+}
+.center {
+	background:url(../images/login/seprateline_05.png) center no-repeat;
+	height:300px;
+	clear:both;
+	margin:auto;
+}
+.logo {
+	margin-top:45px;
+	float:left;
+	margin-left:30px;
+}
+.logo img{
+	width: 400px;
+	height: 200px;
+}
+.login {
+	float:right;
+	margin-top:60px;
+	margin-right: 120px;
+}
+
+.login_un {
+	width:270px;
+	margin-bottom: 30px;
+	height: 38px;
+}
+.user {
+	background:#FFF;
+	width:230px;
+	height:38px;
+	border:1px #bcbec3 solid;
+	padding-left: 4px;
+}
+.icon_un {
+	background:url(../images/login/icon_05.png) no-repeat center #fefefe;
+	width:32px;
+	height:38px;
+	border:1px solid #bcbec3;
+	border-right:none;
+	float:left;
+}
+.login_pwd {
+	width:270px;
+	margin-bottom: 30px;
+	height: 38px;
+}
+.password {
+	background:#FFF;
+	width:230px;
+	height:38px;
+	border:1px #bcbec3 solid;
+	padding-left: 4px;
+}
+.icon_pwd {
+	background:url(../images/login/icon_11.png) no-repeat center #fefefe;
+	width:32px;
+	height:38px;
+	border:1px solid #bcbec3;
+	border-right:none;
+	float:left;
+}

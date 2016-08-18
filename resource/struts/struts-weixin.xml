@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">    	
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<package name="weixin"  extends="struts-default">
+		<interceptors>
+			<interceptor name="configdebug" class="com.configdebug.interceptor.ConfigDebugInterceptor"/>
+			<interceptor-stack name="weixin-stack">
+				<interceptor-ref name="configdebug"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="weixin-stack" />
+		<global-results>
+			 <result name="login" type="redirect">/main/login</result>
+		     <result name="error">/error500.jsp</result>
+		     <result name="invalid.token">/token.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+		    <exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+		<action name="weixinAccount" class="weixinAccountAction">
+			<result name="edit">/pages/weixin/account/edit.jsp</result>
+			<result name="editSelf">/pages/weixin/account/editSelf.jsp</result>
+			<result name="list">/pages/weixin/account/list.jsp</result>
+		</action>	
+		<action name="weixinMenuentity" class="weixinMenuentityAction">
+			<result name="edit">/pages/weixin/menuentity/edit.jsp</result>
+			<result name="list">/pages/weixin/menuentity/list.jsp</result>
+		</action>	
+		<action name="weixinAutoresponse" class="weixinAutoresponseAction">
+			<result name="edit">/pages/weixin/autoresponse/edit.jsp</result>
+			<result name="list">/pages/weixin/autoresponse/list.jsp</result>
+		</action>	
+		<action name="weixinNewsItem" class="weixinNewsItemAction">
+			<result name="edit">/pages/weixin/newsItem/edit.jsp</result>
+			<result name="addMore">/pages/weixin/newsItem/addMore.jsp</result>
+			<result name="editMore">/pages/weixin/newsItem/editMore.jsp</result>
+			<result name="list">/pages/weixin/newsItem/list.jsp</result>
+		</action>	
+		<action name="wechatNewsItem" class="wechatNewsItemAction">
+			<result name="edit">/pages/weixin/wechatNewsItem/edit.jsp</result>
+			<result name="addMore">/pages/weixin/wechatNewsItem/addMore.jsp</result>
+			<result name="editMore">/pages/weixin/wechatNewsItem/editMore.jsp</result>
+			<result name="list">/pages/weixin/wechatNewsItem/list.jsp</result>
+		</action>	
+		<action name="weixinTexttemplate" class="weixinTexttemplateAction">
+			<result name="edit">/pages/weixin/texttemplate/edit.jsp</result>
+			<result name="list">/pages/weixin/texttemplate/list.jsp</result>
+		</action>	
+		<action name="weixinSubscribe" class="weixinSubscribeAction">
+			<result name="edit">/pages/weixin/subscribe/edit.jsp</result>
+			<result name="list">/pages/weixin/subscribe/list.jsp</result>
+		</action>	
+		<action name="wechatAuth" class="wechatAuthAction">
+      		 <result name="oAuth2">/pages/weixin/wechatauth/oAuth2.jsp</result>
+      		 <result name="outh2Remote">/pages/weixin/wechatauth/outh2Remote.jsp</result>
+        	 <result name="error">/pages/weixin/wechatauth/error.jsp</result>
+     </action>
+		<action name="weixinGzUserInfo" class="weixinGzUserInfoAction">
+      		 <result name="list">/pages/weixin/gzUserInfo/list.jsp</result>
+      		 <result name="view">/pages/weixin/gzUserInfo/view.jsp</result>
+     </action>
+		<action name="weixinGroup" class="weixinGroupAction">
+      		 <result name="list">/pages/weixin/group/list.jsp</result>
+      		 <result name="edit">/pages/weixin/group/edit.jsp</result>
+     </action>
+	<action name="kfAccount" class="kfAccountAction">
+      		 <result name="list">/pages/weixin/kfAccount/list.jsp</result>
+      		 <result name="edit">/pages/weixin/kfAccount/edit.jsp</result>
+     </action>
+     <!-- 微信多媒体素材管理 -->
+	<action name="wechatMedia" class="wechatMediaAction">
+      		 <result name="list">/pages/weixin/wechatMedia/list.jsp</result>
+      		 <result name="uploadConpentWechat">/pages/weixin/wechatMedia/uploadConpentWechat.jsp</result>
+      		 <result name="uploadLocalImage">/pages/weixin/wechatMedia/uploadLocalImage.jsp</result>
+     </action>
+     <!-- 微信群发功能 -->
+	<action name="wechatSendMessage" class="wechatSendMessageAction">
+      		<result name="list">/pages/weixin/sendMessage/list.jsp</result>
+      		<result name="edit">/pages/weixin/sendMessage/edit.jsp</result>
+      		<result name="selectNewsItem">/pages/weixin/sendMessage/selectNewsItem.jsp</result>
+     </action>
+     <!-- 微信多媒体素材管理  具体内容图片-->
+	<action name="wechatMediaImage" class="wechatMediaImageAction">
+     </action>
+    </package>
+</struts>

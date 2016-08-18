@@ -1,0 +1,85 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../commons/taglib.jsp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台表单页面</title>
+<link href="${ctx }/css/common.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="container">
+  <div class="head">
+    <div class="logo"></div>
+    <div class="head_nav">
+      <a href="" class="active">基础信息</a>
+      <a href="">客户关系</a>
+      <a href="">教务管理</a>
+      <a href="">教学管理</a>
+      <a href="">系统设置</a>
+    </div>
+  </div>
+  <div class="main">
+    <div class="left">
+      <div class="user">
+        <div style="float:left;margin-right:10px;"><img src="images/userIcon.png" /></div>
+        <div style="float:left;">欢迎您<br />Admin</div>
+        <div class="user_a"><a href="">账号设置</a>&nbsp;&nbsp;&nbsp; <a href="">注销</a></div>
+      </div>
+      <div class="left_nav">
+        <a href="">客户管理</a>
+        <a href="">项目管理</a>
+        <a href="" class="active">提交项目</a>
+        <a href="">完成项目</a>
+        <a href="">待签合同</a>
+        <a href="">已签合同</a>
+      </div>
+    </div>
+    <div class="main_main">
+      <div class="location"><img src="images/homeIcon.png"/> &nbsp;<a href="">客户关系 </a>- <a href="">完成项目</a> -<a href=""> 基本信息</a></div>
+      <div class="line"></div>
+      <div class="content">
+          <table border="0" cellpadding="0" cellspacing="0" class="table">
+            <tr>
+              <td>商品分类：</td>
+              <td><select name="class" size="1" class="biankuang">
+                    <option>时尚女装</option>
+                    <option>2</option>
+                    <option>3</option>
+                  </select>
+              </td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>商品名称：</td>
+              <td><input name="name" type="text" class="biankuang"/></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>商品售价：</td>
+              <td><input name="price" type="text" class="biankuang"/></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>上传照片：</td>
+              <td><input name="" type="text" class="biankuang"/></td>
+              <td><input name="upload" type="file" style="height:30px;"/></td>
+            </tr>
+            <tr>
+              <td>内容描述：</td>
+              <td><textarea name="miaoshu" style="width:188px;"></textarea></td>
+              <td>&nbsp;</td>
+            </tr>
+          </table><!--content end-->
+      </div>
+      <div class="postbutton">
+        <a href="" class="but_save"></a>
+        <a href="" class="but_cancle"></a>
+      </div> 
+    </div>
+  </div>
+</div>
+</body>
+</html>

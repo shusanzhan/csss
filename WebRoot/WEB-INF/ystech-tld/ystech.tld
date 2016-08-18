@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+    version="2.1">
+    
+  <description>自定义标签</description>
+  <display-name>JSTL core</display-name>
+  <tlib-version>1.1</tlib-version>
+  <short-name>ystech</short-name>
+  <uri>http://www.ystech.co/tag</uri>
+  <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>urlEncrypt</name>
+       <tag-class>com.ystech.core.util.tag.UrlEncrypt</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+      
+       <attribute>
+           <name>enCode</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+    </tag>
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>subDate</name>
+       <tag-class>com.ystech.core.util.tag.SubDate</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>startTime</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>prodcutCategory</name>
+       <tag-class>com.ystech.core.util.tag.ProductCategoryTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>customerTrackCountTag</name>
+       <tag-class>com.ystech.core.util.tag.CustomerTrackCountTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>customerId</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>couponMemberCountTag</name>
+       <tag-class>com.ystech.core.util.tag.CouponMemberCountTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>memberId</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>prodcutCategory</name>
+       <tag-class>com.ystech.core.util.tag.ProductCategoryTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   
+   <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' />用于前台 -->
+       <name>prodcutCategory1</name>
+       <tag-class>com.ystech.core.util.tag.ProductCategoryTag1</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+   
+    <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' />用于模板one-->
+       <name>productCategoryTagToMBOne</name>
+       <tag-class>com.ystech.core.util.tag.ProductCategoryTagToMBOne</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+     <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>nProdcutType</name>
+       <tag-class>com.ystech.core.util.tag.NProductTypeTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+    <tag>
+       <!-- 名称为 <modo:urlEncrypt enCode='' /> -->
+       <name>weixinMenuentityTag</name>
+       <tag-class>com.ystech.core.util.tag.WeixinMenuentityTag</tag-class>
+       <body-content>empty</body-content> <!-- 就是<test:add ></test>中间的内容是空的 -->
+       <attribute>
+           <name>dbid</name>
+           <required>true</required>
+           <rtexprvalue>true</rtexprvalue>
+       </attribute>
+   </tag>
+</taglib>

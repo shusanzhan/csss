@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<logs>
+	<!-- 日志记录对应关系 
+	<log class="com.ystech.aqtp.model.BreaderBreed" txt="验证码管理">
+		<actionFeild property="dbid" value="验证码ID"></actionFeild>
+	</log>-->
+	<!-- 日志记录对应关系 -->
+	<log class="com.ystech.core.model.User" txt="用户管理">
+		<actionFeild property="dbid" value="用户ID"></actionFeild>
+	</log>
+	<log class="com.ystech.core.model.Role" txt="角色管理">
+		<actionFeild property="dbid" value="角色管理ID"></actionFeild>
+	</log>
+	<log class="com.ystech.core.model.Department" txt="部门管理">
+		<actionFeild property="dbid" value="部门ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.ApprovalRecord" txt="合同审批记录">
+		<actionFeild property="dbid" value="合同审批记录ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.ApprovalRecordPidBookingRecord" txt="合同流失审批记录">
+		<actionFeild property="dbid" value="合同流失审批ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.Customer" txt="客户管理">
+		<actionFeild property="dbid" value="客户ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.CustomerBussi" txt="完善客户信息">
+		<actionFeild property="dbid" value="完善客户信息ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.CustomerLastBussi" txt="成交记录">
+		<actionFeild property="dbid" value="成交记录ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.CustomerPidBookingRecord" txt="交车记录">
+		<actionFeild property="dbid" value="交车记录ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.CustomerShoppingRecord" txt="客户来电登记">
+		<actionFeild property="dbid" value="客户来电登记ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.CustomerTrack" txt="跟踪记录">
+		<actionFeild property="dbid" value="跟踪记录ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.DecoreNotice" txt="装饰通知单">
+		<actionFeild property="dbid" value="装饰通知单ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.Member" txt="会员">
+		<actionFeild property="dbid" value="会员ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.OnlineBooking" txt="在线预约">
+		<actionFeild property="dbid" value="在线预约ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.OrderContract" txt="订单信息">
+		<actionFeild property="dbid" value="订单ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.PaymentConfirmation" txt="付款确认单">
+		<actionFeild property="dbid" value="付款确认单ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.PointRecord" txt="记录记录">
+		<actionFeild property="dbid" value="记录记录ID"></actionFeild>
+	</log>
+	<log class="com.ystech.xwqr.model.TurnCustomerRecord" txt="转单记录">
+		<actionFeild property="dbid" value="转单记录ID"></actionFeild>
+	</log>
+	
+	
+</logs>
