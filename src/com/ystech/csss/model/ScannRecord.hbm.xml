@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 23:01:15 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.csss.model.ScannRecord" table="csss_Scannrecord" >
+        <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="weixinGzuserinfo" column="gzUserId" class="com.ystech.weixin.model.WeixinGzuserinfo" fetch="join" not-found="ignore"></many-to-one>
+        <many-to-one name="csssShop" column="shopId" class="com.ystech.csss.model.CsssShop" fetch="join" not-found="ignore"></many-to-one>
+        <many-to-one name="csssStaff" column="staffId" class="com.ystech.csss.model.CsssStaff" fetch="join" not-found="ignore"></many-to-one>
+        <property name="scannDate" type="date">
+            <column name="scannDate" length="10" />
+        </property>
+        <property name="staffName" type="string">
+            <column name="staffName" length="255" />
+        </property>
+        <property name="scannType" type="java.lang.Integer">
+            <column name="scannType">
+                <comment>
+                1&#161;&#162;&#185;&#216;&#215;&#162;&#201;&#168;&#195;&#232;&#163;&#172;2&#161;&#162;&#210;&#209;&#185;&#216;&#215;&#162;&#201;&#168;&#195;&#232;</comment>
+            </column>
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

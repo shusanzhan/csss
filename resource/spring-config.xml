@@ -72,12 +72,8 @@
           <list>
               <value>classpath*:com/ystech/core/model/*.hbm.xml</value>
               <value>classpath*:com/ystech/xwqr/model/*.hbm.xml</value>
+              <value>classpath*:com/ystech/csss/model/*.hbm.xml</value>
               <value>classpath*:com/ystech/xwqr/model/sys/*.hbm.xml</value>
-              <value>classpath*:com/ystech/xwqr/model/coupon/*.hbm.xml</value>
-              <value>classpath*:com/ystech/xwqr/model/sms/*.hbm.xml</value>
-              <value>classpath*:com/ystech/shop/model/*.hbm.xml</value>
-              <value>classpath*:com/ystech/shop/model/set/*.hbm.xml</value>
-              <value>classpath*:com/ystech/shop/model/order/*.hbm.xml</value>
               <value>classpath*:com/ystech/weixin/model/*.hbm.xml</value>
           </list>
         </property>

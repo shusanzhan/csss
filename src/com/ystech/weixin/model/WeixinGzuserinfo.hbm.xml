@@ -89,5 +89,6 @@
             <column name="accountid" />
         </property>
         <many-to-one name="parent" class="com.ystech.weixin.model.WeixinGzuserinfo" column="parentId" not-found="ignore" fetch="select"></many-to-one>
+         <many-to-one name="csssStaff" class="com.ystech.csss.model.CsssStaff" column="csssStaffId" not-found="ignore" fetch="select"></many-to-one>
     </class>
 </hibernate-mapping>

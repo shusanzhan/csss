@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-8-20 23:01:15 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.ystech.csss.model.CsssStaff" table="csss_staff" >
+         <id name="dbid" type="java.lang.Integer">
+            <column name="dbid" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="csssShop" class="com.ystech.csss.model.CsssShop" fetch="select">
+            <column name="shopId" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="name" length="200" />
+        </property>
+        <property name="no" type="string">
+            <column name="no" length="200" />
+        </property>
+        <property name="sex" type="string">
+            <column name="sex" length="20" />
+        </property>
+        <property name="mobilePhone" type="string">
+            <column name="mobilePhone" length="20" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="200" />
+        </property>
+        <property name="createDate" type="date">
+            <column name="createDate" length="10" />
+        </property>
+        <property name="modifyDate" type="date">
+            <column name="modifyDate" length="10" />
+        </property>
+        <property name="qrCodeStatus" type="java.lang.Integer">
+            <column name="qrCodeStatus" />
+        </property>
+        <property name="qrCode" type="string">
+            <column name="qrCode" length="200" />
+        </property>
+        <property name="sceneStr" type="string">
+            <column name="sceneStr" length="200" />
+        </property>
+        <property name="ticket" type="string">
+            <column name="ticket" length="200" />
+        </property>
+        <property name="qrCodeDate" type="date">
+            <column name="qrCodeDate" />
+        </property>
+        <property name="scannNum" type="java.lang.Integer">
+            <column name="scannNum" />
+        </property>
+        <property name="leaderNum" type="java.lang.Integer">
+            <column name="leaderNum" />
+        </property>
+        <property name="note" type="string">
+            <column name="note" length="200" />
+        </property>
+    </class>
+</hibernate-mapping>

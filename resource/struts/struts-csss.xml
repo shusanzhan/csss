@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">    	
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<package name="csss"  extends="struts-default">
+		<interceptors>
+			<interceptor name="configdebug" class="com.configdebug.interceptor.ConfigDebugInterceptor"/>
+			<interceptor-stack name="csss-stack">
+				<interceptor-ref name="configdebug"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="csss-stack" />
+		<global-results>
+			 <result name="login" type="redirect">/main/login</result>
+		     <result name="error">/error500.jsp</result>
+		     <result name="invalid.token">/token.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+		    <exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+		<action name="csssShop" class="csssShopAction">
+			<result name="edit">/pages/csss/csssShop/edit.jsp</result>
+			<result name="list">/pages/csss/csssShop/list.jsp</result>
+			<result name="error">/pages/csss/csssShop/error.jsp</result>
+			<result name="success">/pages/csss/csssShop/success.jsp</result>
+			<result name="importExcel">/pages/csss/csssShop/importExcel.jsp</result>
+		</action>	
+		<action name="proviceShop" class="proviceShopAction">
+			<result name="edit">/pages/csss/proviceShop/edit.jsp</result>
+			<result name="list">/pages/csss/proviceShop/list.jsp</result>
+			<result name="error">/pages/csss/proviceShop/error.jsp</result>
+			<result name="success">/pages/csss/proviceShop/success.jsp</result>
+			<result name="importExcel">/pages/csss/proviceShop/importExcel.jsp</result>
+		</action>	
+		<action name="cityShop" class="cityShopAction">
+			<result name="edit">/pages/csss/cityShop/edit.jsp</result>
+			<result name="list">/pages/csss/cityShop/list.jsp</result>
+			<result name="error">/pages/csss/cityShop/error.jsp</result>
+			<result name="success">/pages/csss/cityShop/success.jsp</result>
+			<result name="importExcel">/pages/csss/cityShop/importExcel.jsp</result>
+		</action>	
+		<action name="csssStaff" class="csssStaffAction">
+			<result name="edit">/pages/csss/csssStaff/edit.jsp</result>
+			<result name="list">/pages/csss/csssStaff/list.jsp</result>
+			<result name="error">/pages/csss/csssStaff/error.jsp</result>
+			<result name="success">/pages/csss/csssStaff/success.jsp</result>
+			<result name="importExcel">/pages/csss/csssStaff/importExcel.jsp</result>
+		</action>	
+		<action name="scannRecord" class="scannRecordAction">
+			<result name="list">/pages/csss/scannRecord/list.jsp</result>
+			<result name="report">/pages/csss/scannRecord/report.jsp</result>
+		</action>
+    </package>
+</struts>

@@ -5,11 +5,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>西物中锐奇瑞 会员管理系统</title>
+<title>昆仑之星产品销售管理系统 登陆</title>
 <link href="${ctx }/css/login.css" type="text/css" rel="stylesheet"/>
 </head>
 <body>
-  <div  id="title" class="title" style="text-align: center;">
+  <div  id="title" class="title" style="text-align: center;width: 420px;">
   	<c:if test="${empty(systemInfo.nameImage)}">
 	  	${systemInfo.name }
   	</c:if>
@@ -47,7 +47,7 @@
       </div>
     </div> 
   </div>
-	  <div style="color: #FFF;right:45%;bottom :12px;text-algin:center;position:absolute;">蜀ICP备14016911号</div>
+	  <div style="color: #FFF;right:45%;bottom :12px;text-algin:center;position:absolute;"><!-- 蜀ICP备14016911号 --></div>
 </body>
 <script src="${ctx }/widgets/bootstrap/jquery.min.js"></script>
 <script type="text/javascript">

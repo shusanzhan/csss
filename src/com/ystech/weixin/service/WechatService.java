@@ -3,6 +3,7 @@ package com.ystech.weixin.service;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -15,11 +16,16 @@ import org.springframework.stereotype.Component;
 import com.ystech.core.util.DateUtil;
 import com.ystech.core.util.LogUtil;
 import com.ystech.core.util.PathUtil;
+import com.ystech.csss.model.CsssStaff;
+import com.ystech.csss.model.ScannRecord;
+import com.ystech.csss.service.CsssStaffManageImpl;
+import com.ystech.csss.service.ScannRecordManageImpl;
 import com.ystech.weixin.core.resp.Article;
 import com.ystech.weixin.core.resp.NewsMessageResp;
 import com.ystech.weixin.core.resp.TextMessageResp;
 import com.ystech.weixin.core.util.FreemarkerHelper;
 import com.ystech.weixin.core.util.MessageUtil;
+import com.ystech.weixin.core.util.WeixinUtil;
 import com.ystech.weixin.model.WechatSendMessage;
 import com.ystech.weixin.model.WeixinAccesstoken;
 import com.ystech.weixin.model.WeixinAccount;
@@ -31,7 +37,6 @@ import com.ystech.weixin.model.WeixinNewsitem;
 import com.ystech.weixin.model.WeixinReceivetext;
 import com.ystech.weixin.model.WeixinSubscribe;
 import com.ystech.weixin.model.WeixinTexttemplate;
-
 
 @Component("wechatService")
 public class WechatService {
@@ -46,76 +51,79 @@ public class WechatService {
 	private WeixinMenuentityManageImpl weixinMenuentityManageImpl;
 	private WeixinGzuserinfoManageImpl weixinGzuserinfoManageImpl;
 	private WeixinAccesstokenManageImpl weixinAccesstokenManageImpl;
-	//群发信息返回结果处理
 	private WechatSendMessageManageImpl wechatSendMessageManageImpl;
+	private CsssStaffManageImpl csssStaffManageImpl;
+	private ScannRecordManageImpl scannRecordManageImpl;
+
 	@Resource
-	public void setWeixinAutoresponseManageImpl(
-			WeixinAutoresponseManageImpl weixinAutoresponseManageImpl) {
+	public void setWeixinAutoresponseManageImpl(WeixinAutoresponseManageImpl weixinAutoresponseManageImpl) {
 		this.weixinAutoresponseManageImpl = weixinAutoresponseManageImpl;
 	}
 
 	@Resource
-	public void setWeixinSubscribeManageImpl(
-			WeixinSubscribeManageImpl weixinSubscribeManageImpl) {
+	public void setWeixinSubscribeManageImpl(WeixinSubscribeManageImpl weixinSubscribeManageImpl) {
 		this.weixinSubscribeManageImpl = weixinSubscribeManageImpl;
 	}
 
 	@Resource
-	public void setWeixinAccountManageImpl(
-			WeixinAccountManageImpl weixinAccountManageImpl) {
+	public void setCsssStaffManageImpl(CsssStaffManageImpl csssStaffManageImpl) {
+		this.csssStaffManageImpl = csssStaffManageImpl;
+	}
+
+	@Resource
+	public void setWeixinAccountManageImpl(WeixinAccountManageImpl weixinAccountManageImpl) {
 		this.weixinAccountManageImpl = weixinAccountManageImpl;
 	}
 
 	@Resource
-	public void setWeixinReceivetextManageImpl(
-			WeixinReceivetextManageImpl weixinReceivetextManageImpl) {
+	public void setWeixinReceivetextManageImpl(WeixinReceivetextManageImpl weixinReceivetextManageImpl) {
 		this.weixinReceivetextManageImpl = weixinReceivetextManageImpl;
 	}
 
 	@Resource
-	public void setWeixinTexttemplateManageImpl(
-			WeixinTexttemplateManageImpl weixinTexttemplateManageImpl) {
+	public void setWeixinTexttemplateManageImpl(WeixinTexttemplateManageImpl weixinTexttemplateManageImpl) {
 		this.weixinTexttemplateManageImpl = weixinTexttemplateManageImpl;
 	}
 
 	@Resource
-	public void setWeixinNewstemplateManageImpl(
-			WeixinNewstemplateManageImpl weixinNewstemplateManageImpl) {
+	public void setWeixinNewstemplateManageImpl(WeixinNewstemplateManageImpl weixinNewstemplateManageImpl) {
 		this.weixinNewstemplateManageImpl = weixinNewstemplateManageImpl;
 	}
+
 	@Resource
 	public void setWeixinAccesstokenManageImpl(WeixinAccesstokenManageImpl weixinAccesstokenManageImpl) {
 		this.weixinAccesstokenManageImpl = weixinAccesstokenManageImpl;
 	}
 
 	@Resource
-	public void setWeixinNewsitemManageImpl(
-			WeixinNewsitemManageImpl weixinNewsitemManageImpl) {
+	public void setWeixinNewsitemManageImpl(WeixinNewsitemManageImpl weixinNewsitemManageImpl) {
 		this.weixinNewsitemManageImpl = weixinNewsitemManageImpl;
 	}
 
 	@Resource
-	public void setWeixinExpandconfigManageImpl(
-			WeixinExpandconfigManageImpl weixinExpandconfigManageImpl) {
+	public void setWeixinExpandconfigManageImpl(WeixinExpandconfigManageImpl weixinExpandconfigManageImpl) {
 		this.weixinExpandconfigManageImpl = weixinExpandconfigManageImpl;
 	}
 
 	@Resource
-	public void setWeixinMenuentityManageImpl(
-			WeixinMenuentityManageImpl weixinMenuentityManageImpl) {
+	public void setWeixinMenuentityManageImpl(WeixinMenuentityManageImpl weixinMenuentityManageImpl) {
 		this.weixinMenuentityManageImpl = weixinMenuentityManageImpl;
 	}
 
 	@Resource
-	public void setWeixinGzuserinfoManageImpl(
-			WeixinGzuserinfoManageImpl weixinGzuserinfoManageImpl) {
+	public void setWeixinGzuserinfoManageImpl(WeixinGzuserinfoManageImpl weixinGzuserinfoManageImpl) {
 		this.weixinGzuserinfoManageImpl = weixinGzuserinfoManageImpl;
 	}
+
 	@Resource
 	public void setWechatSendMessageManageImpl(WechatSendMessageManageImpl wechatSendMessageManageImpl) {
 		this.wechatSendMessageManageImpl = wechatSendMessageManageImpl;
 	}
 
+	@Resource
+	public void setScannRecordManageImpl(ScannRecordManageImpl scannRecordManageImpl) {
+		this.scannRecordManageImpl = scannRecordManageImpl;
+	}
 	/**
 	 * 功能描述：获取微信端发送请求数据，数据分类为文本、图片、视频、语音、事件；
 	 * 操作步骤：
@@ -364,6 +372,9 @@ public class WechatService {
 	 */
 	String doDingYueEventResponse(Map<String, String> requestMap,TextMessageResp textMessage ,String respMessage
 			,String toUserName,String fromUserName,String respContent,String sys_accountId,HttpServletRequest request,WeixinGzuserinfo weixinGzuserinfo){
+		
+		saveScannRecord(requestMap, Integer.valueOf(1), weixinGzuserinfo);
+		
 		WeixinAccount weixinAccount = weixinAccountManageImpl.get(Integer.parseInt(sys_accountId));
 		respContent = "谢谢您的关注,";
 		if(null!=weixinAccount){
@@ -398,6 +409,8 @@ public class WechatService {
 	 */
 	String doScanEventResponse(Map<String, String> requestMap,TextMessageResp textMessage ,String respMessage
 			,String toUserName,String fromUserName,String respContent,String sys_accountId,HttpServletRequest request){
+		
+		saveScannRecord(requestMap, Integer.valueOf(2), null);
 		
 		WeixinAccount weixinAccount = weixinAccountManageImpl.get(Integer.parseInt(sys_accountId));
 		respContent = "谢谢您的关注,";
@@ -599,4 +612,71 @@ public class WechatService {
 			wechatSendMessageManageImpl.save(wechatSendMessage);
 		}
 	}
+	/**
+	 * 记录扫描数据
+	 * @param requestMap
+	 * @param type
+	 * @param weixinGzuserinfo
+	 */
+	 private void saveScannRecord(Map<String, String> requestMap, Integer type, WeixinGzuserinfo weixinGzuserinfo)
+	  {
+	    String key = (String)requestMap.get("EventKey");
+	    if (type.intValue() == 1) {
+	      key = key.replace("qrscene_", "");
+	    }
+	    if ((key != null) && (key.trim().length() > 0))
+	    {
+	      List<CsssStaff> csssStaffs = this.csssStaffManageImpl.findBy("sceneStr", key);
+	      if ((csssStaffs != null) && (csssStaffs.size() > 0))
+	      {
+	        CsssStaff csssStaff = (CsssStaff)csssStaffs.get(0);
+	        ScannRecord scannRecord = new ScannRecord();
+	        if (csssStaff.getCsssShop() != null) {
+	          scannRecord.setCsssShop(csssStaff.getCsssShop());
+	        }
+	        scannRecord.setCsssStaff(csssStaff);
+	        scannRecord.setStaffName(csssStaff.getName());
+	        scannRecord.setWeixinGzuserinfo(weixinGzuserinfo);
+	        scannRecord.setNote("");
+	        scannRecord.setScannDate(new Date());
+	        if (type.intValue() == 1)
+	        {
+	          scannRecord.setScannType(Integer.valueOf(1));
+	          if (weixinGzuserinfo != null)
+	          {
+	            weixinGzuserinfo.setCsssStaff(csssStaff);
+	            this.weixinGzuserinfoManageImpl.save(weixinGzuserinfo);
+	          }
+	          Integer scannNum = csssStaff.getScannNum();
+	          if (scannNum == null) {
+	            scannNum = Integer.valueOf(1);
+	          } else {
+	            scannNum = Integer.valueOf(scannNum.intValue() + 1);
+	          }
+	          csssStaff.setScannNum(scannNum);
+	          Integer leaderNum = csssStaff.getLeaderNum();
+	          if (leaderNum == null) {
+	            leaderNum = Integer.valueOf(1);
+	          } else {
+	            leaderNum = Integer.valueOf(leaderNum.intValue() + 1);
+	          }
+	          csssStaff.setLeaderNum(leaderNum);
+	          this.csssStaffManageImpl.save(csssStaff);
+	        }
+	        else
+	        {
+	          Integer scannNum = csssStaff.getScannNum();
+	          if (scannNum == null) {
+	            scannNum = Integer.valueOf(1);
+	          } else {
+	            scannNum = Integer.valueOf(scannNum.intValue() + 1);
+	          }
+	          csssStaff.setScannNum(scannNum);
+	          this.csssStaffManageImpl.save(csssStaff);
+	          scannRecord.setScannType(Integer.valueOf(2));
+	        }
+	        this.scannRecordManageImpl.save(scannRecord);
+	      }
+	    }
+	  }
 }
