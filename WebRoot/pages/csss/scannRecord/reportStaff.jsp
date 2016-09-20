@@ -74,23 +74,25 @@ background-color: #eeeeee; border-color:#eeeeee;font-size: 16px;font-weight: bol
 <div class="location">
 	<img src="${ctx}/images/homeIcon.png"/> &nbsp;
 	<a href="javascript:void(-1);" onclick="window.parent.location.href='${ctx}/main/index'">首页</a>-
-	<a href="javascript:void(-1);" onclick="">扫描记录统计</a>
+	<a href="javascript:void(-1);" onclick="window.parent.location.href='${ctx}/scannRecord/report'">销售统计</a>-
+	<a href="javascript:void(-1);" onclick="">扫描记录（店）明细</a>
 </div>
  <!--location end-->
 <div class="line"></div>
 <div class="listOperate">
 	<div class="operate">
-		<a class="but button" href="javascript:void(-1);" onclick="exportExcel('searchPageForm')">导出excel</a>
+		<a class="but butCancle" href="javascript:void(-1);" onclick="window.history.go(-1)">返回</a>
+		<!-- <a class="but button" href="javascript:void(-1);" onclick="exportExcel('searchPageForm')">导出excel</a> -->
    </div>
   	<div class="seracrhOperate">
-  		<form name="searchPageForm" id="searchPageForm" action="${ctx}/scannRecord/report" method="post">
+  		<form name="searchPageForm" id="searchPageForm" action="${ctx}/scannRecord/reportStaff" method="post">
 		<input type="hidden" id="currentPage" name="currentPage" value='${page.currentPageNo}'>
 		<input type="hidden" id="paramPageSize" name="pageSize" value='${page.pageSize}'>
 		<table cellpadding="0" cellspacing="0" class="searchTable" >
   			<tr>
-  				<td><label>店名：</label></td>
+  				<td><label>店员：</label></td>
   				<td>
-  					<input class="text small" id="cName" name="cName"  value="${param.cName }">
+  					<input class="text small" id="staffName" name="staffName"  value="${param.staffName }">
   				</td>
   				<td><label>扫描时间：</label></td>
   				<td>
@@ -118,7 +120,8 @@ background-color: #eeeeee; border-color:#eeeeee;font-size: 16px;font-weight: bol
 			<th style="width: 70px;text-align: center;"  rowspan="1">地市公司</th>
 			<th style="width: 70px;text-align: center;"  rowspan="1">地市公司名称</th>
 			<th style="width: 40px;text-align: center;"  rowspan="1">便利店</th>
-			<th style="width: 60px;text-align: center;"  rowspan="1">便利店名称</th>
+			<th style="width: 80px;text-align: center;"  rowspan="1">便利店名称</th>
+			<th style="width: 40px;text-align: center;"  rowspan="1">店员</th>
 			<th style="width: 60px;text-align: center;"  rowspan="1">销售数量</th>
 		</tr>
 		<c:forEach var="reportData" items="${reportDatas }" varStatus="i">
@@ -142,7 +145,10 @@ background-color: #eeeeee; border-color:#eeeeee;font-size: 16px;font-weight: bol
 					${reportData.shopNo }			
 				</td>
 				<td style="text-align: center;padding-left: 0px;" >
-					<a style="color: #2b7dbc" href="${ctx }/scannRecord/reportStaff?csssShopId=${reportData.dbid}&startTime=${param.startTime }&endTime=${param.endTime}">${reportData.shopName }</a>
+					${reportData.shopName }
+				</td>
+				<td style="text-align: center;padding-left: 0px;" >
+					<a style="color: #2b7dbc" href="${ctx }/scannRecord/reportDetial?staffId=${reportData.dbid}&startTime=${param.startTime }&endTime=${param.endTime}">${reportData.staffName }</a>
 				</td>
 				<td style="text-align: center;">
 					${reportData.num}
