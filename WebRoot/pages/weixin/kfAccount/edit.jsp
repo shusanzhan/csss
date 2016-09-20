@@ -18,8 +18,8 @@
 </head>
 <body>
 		<div id="breadcrumb">
-			<a href="${ctx }/main/index" title="微商城中心" class="tip-bottom"><i
-				class="icon-home"></i>微商城中心</a> 
+			<a href="${ctx }/main/index" title="主页" class="tip-bottom"><i
+				class="icon-home"></i>主页</a> 
 				<a href="javascript:void(-1)" class="current">
 					<c:if test="${kfAccount.dbid>0 }" var="status">编辑客服管理</c:if>
 					<c:if test="${status==false }">添加客服管理</c:if>
