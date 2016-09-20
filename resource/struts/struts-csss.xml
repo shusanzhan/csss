@@ -53,6 +53,8 @@
 		<action name="scannRecord" class="scannRecordAction">
 			<result name="list">/pages/csss/scannRecord/list.jsp</result>
 			<result name="report">/pages/csss/scannRecord/report.jsp</result>
+			<result name="reportDetial">/pages/csss/scannRecord/reportDetial.jsp</result>
+			<result name="reportStaff">/pages/csss/scannRecord/reportStaff.jsp</result>
 		</action>
     </package>
 </struts>
