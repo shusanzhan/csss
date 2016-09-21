@@ -36,7 +36,7 @@ public class LoginFilter implements Filter {
 				path.indexOf("/widgets/")>-1||path.indexOf("/main/login")>-1||
 				path.indexOf("/pages/login/login.jsp")>-1||path.indexOf("/j_spring_security_check")>-1
 				||path.indexOf("/memberWeixin")>-1||path.indexOf("/weixinDataInterface")>-1||path.indexOf("/emergencyHelp")>-1
-				||path.indexOf("/onlineBookingWeixin")>-1||path.indexOf("archives")>-1||path.indexOf("swfUpload")>-1||path.indexOf("wechatMedia")>-1||path.indexOf("area")>-1
+				||path.indexOf("/newsItemWechat")>-1||path.indexOf("archives")>-1||path.indexOf("swfUpload")>-1||path.indexOf("wechatMedia")>-1||path.indexOf("area")>-1
 				||path.indexOf("Weixin")>-1||path.indexOf("/wechatAuth")>-1||path.indexOf("weixin")>-1||path.indexOf("car")>-1||path.indexOf("/memberPayment")>-1||path.indexOf("receiver")>-1){
 			chain.doFilter(servletRequest, servletResponse);
 			 return ;

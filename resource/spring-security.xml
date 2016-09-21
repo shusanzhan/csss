@@ -13,6 +13,7 @@
    	<http  pattern="/widgets/**" security="none"></http>
    	<http  pattern="/main/login" security="none"></http>
    	<http  pattern="/weixinDataInterface/**" security="none"></http>
+   	<http  pattern="/newsItemWechat/**" security="none"></http>
    	<http  pattern="/**Weixin/**" security="none"></http>
    	<http  pattern="/pages/login/login.jsp" security="none"></http> 
    	

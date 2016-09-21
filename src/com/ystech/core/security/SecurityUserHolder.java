@@ -38,7 +38,7 @@ public class SecurityUserHolder {
 			weixinAccountEntity = new WeixinAccount();
 			// 返回个临时对象，防止空指针
 			weixinAccountEntity.setWeixinAccountid("-1");
-			weixinAccountEntity.setDbid(-1);
+			weixinAccountEntity.setDbid(3);
 			return weixinAccountEntity;
 		}
 	}

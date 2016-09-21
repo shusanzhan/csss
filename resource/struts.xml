@@ -5,14 +5,8 @@
 <struts>
 <include file="/struts/struts_wechat.xml"></include>
 <include file="/struts/struts-csss.xml"></include>
-<include file="/struts/struts-order.xml"></include>
-<include file="/struts/struts-shopset.xml"></include>
-<include file="/struts/struts-sms.xml"></include>
-<include file="/struts/struts-ssz.xml"></include>
 <include file="/struts/struts-sys.xml"></include>
-<include file="/struts/struts-wechatShop.xml"></include>
 <include file="/struts/struts-weixin.xml"></include>
-<include file="/struts/struts-yshop.xml"></include>
 <package name="struts2" extends="struts-default">
 </package>
 </struts>

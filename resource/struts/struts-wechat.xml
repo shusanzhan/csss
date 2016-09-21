@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">    	
+<struts>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<package name="wechat"  extends="struts-default">
+		<interceptors>
+			<interceptor name="oAuth2" class="com.ystech.wechat.interceptor.OAuth2Interceptor"/>
+			<interceptor-stack name="oAuth2Stack">
+				<interceptor-ref name="oAuth2"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="wechat-stack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="wechat-stack" />
+		<global-results>
+			 <result name="login" type="redirect">/main/login</result>
+		     <result name="error">/error500.jsp</result>
+		     <result name="invalid.token">/token.jsp</result>
+		</global-results>
+		
+		<global-exception-mappings>
+		    <exception-mapping exception="java.lang.Exception" result="error"/>
+		</global-exception-mappings>
+		<action name="newsItemWechat" class="newsItemWechatAction">
+			<result name="readNewsItem">/pages/wechat/newsItem/readNewsItem.jsp</result>
+		</action>
+    </package>
+</struts>

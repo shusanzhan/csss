@@ -11,8 +11,8 @@
         <many-to-one name="weixinGzuserinfo" column="gzUserId" class="com.ystech.weixin.model.WeixinGzuserinfo" fetch="join" not-found="ignore"></many-to-one>
         <many-to-one name="csssShop" column="shopId" class="com.ystech.csss.model.CsssShop" fetch="join" not-found="ignore"></many-to-one>
         <many-to-one name="csssStaff" column="staffId" class="com.ystech.csss.model.CsssStaff" fetch="join" not-found="ignore"></many-to-one>
-        <property name="scannDate" type="date">
-            <column name="scannDate" length="10" />
+        <property name="scannDate" type="timestamp">
+            <column name="scannDate" length="19" />
         </property>
         <property name="staffName" type="string">
             <column name="staffName" length="255" />

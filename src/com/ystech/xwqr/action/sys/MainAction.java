@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import com.ystech.core.security.SecurityUserHolder;
 import com.ystech.core.util.ParamUtil;
 import com.ystech.core.web.BaseController;
+import com.ystech.csss.service.ScannRecordManageImpl;
 import com.ystech.xwqr.model.sys.SystemInfo;
 import com.ystech.xwqr.model.sys.User;
 import com.ystech.xwqr.service.sys.DepartmentManageImpl;
@@ -34,6 +35,7 @@ public class MainAction extends BaseController{
 	private HttpServletRequest request=getRequest();
 	private DepartmentManageImpl departmentManageImpl;
 	private SystemInfoMangeImpl systemInfoMangeImpl;
+	private ScannRecordManageImpl scannRecordManageImpl;
 	@Resource
 	public void setResourceManageImpl(ResourceManageImpl resourceManageImpl) {
 		this.resourceManageImpl = resourceManageImpl;
@@ -48,6 +50,10 @@ public class MainAction extends BaseController{
 	@Resource
 	public void setSystemInfoMangeImpl(SystemInfoMangeImpl systemInfoMangeImpl) {
 		this.systemInfoMangeImpl = systemInfoMangeImpl;
+	}
+	@Resource
+	public void setScannRecordManageImpl(ScannRecordManageImpl scannRecordManageImpl) {
+		this.scannRecordManageImpl = scannRecordManageImpl;
 	}
 	/**
 	 * 功能描述：
@@ -106,7 +112,18 @@ public class MainAction extends BaseController{
 	@SuppressWarnings("unchecked")
 	public String adminContent() throws Exception {
 		try{
-			
+			 String gzSql = "SELECT COUNT(*) num FROM weixin_gzuserinfo";
+			 Object gzCount = scannRecordManageImpl.count(gzSql, null);
+			 request.setAttribute("gzCount", gzCount);
+			 String staffSql = "SELECT COUNT(*) num FROM csss_staff";
+			 Object staffCount = scannRecordManageImpl.count(staffSql, null);
+			 request.setAttribute("staffCount", staffCount);
+			 String scTypeScannSql = "SELECT COUNT(*) num FROM csss_scannrecord WHERE scannType=1";
+			 Object scannCount = scannRecordManageImpl.count(scTypeScannSql, null);
+			 request.setAttribute("scannCount", scannCount);
+			 String scTypeLeaderSql = "SELECT COUNT(*) num FROM csss_scannrecord WHERE scannType=2";
+			 Object leadCount = scannRecordManageImpl.count(scTypeLeaderSql, null);
+			request.setAttribute("leadCount", leadCount);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

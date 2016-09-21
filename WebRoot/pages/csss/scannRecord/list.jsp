@@ -94,7 +94,7 @@
 				${scannRecord.csssStaff.name}
 			</td>
 			<td>
-				${scannRecord.scannDate}
+				<fmt:formatDate value="${scannRecord.scannDate}" pattern="yyyy-MM-dd HH:mm:ss"/> 
 			</td>
 			<td >
 				<c:if test="${scannRecord.scannType==1 }">
