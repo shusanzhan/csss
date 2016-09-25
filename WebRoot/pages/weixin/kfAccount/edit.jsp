@@ -39,15 +39,15 @@
 											<img src="${ctx }/images/weixin/avatar-medium.png" alt="" height="80" width="80" id="headimage_id1" tip="请上传头像">
 										</c:if> 
 										<c:if test="${!empty(kfAccount) }">
-											<c:if test="${empty(kfAccount.headImg) }">
+											<c:if test="${empty(kfAccount.kfHeadimgurl) }">
 												<img src="${ctx }/images/weixin/avatar-medium.png" alt="" height="80" width="80" id="headimage_id1" tip="请上传头像">
 											</c:if>
-											<c:if test="${!empty(kfAccount.headImg) }">
-												<img src="${kfAccount.headImg}" alt="" height="80" width="80" id="headimage_id1" tip="请上传头像">
+											<c:if test="${!empty(kfAccount.kfHeadimgurl) }">
+												<img src="${kfAccount.kfHeadimgurl}" alt="" height="80" width="80" id="headimage_id1" tip="请上传头像">
 											</c:if>
 										</c:if> 
 										<span id="spanButtonPlaceholder1"></span> <br />
-										<input id="fileUpload" type="hidden" name="kfAccount.headImg" value="${kfAccount.headImg}"  >
+										<input id="fileUpload" type="hidden" name="kfAccount.kfHeadimgurl" value="${kfAccount.kfHeadimgurl}"  >
 										<br>
 										<p>(jpg格式，建议大小:640*640，24小时后生效)</p>
 										<div id="uploadFileContent" class="uploadFileContent" style="width: 200px"></div>
@@ -74,10 +74,10 @@
 								<div class="control-group">
 									<label class="control-label">昵称：</label>
 									<div class="controls">
-										<input type="text" class="input-xlarge" name="kfAccount.nickname"	id="nickname" value="${kfAccount.nickname }" checkType="string,1,500"  tip="请输入昵称，昵称不能为空"  />
+										<input type="text" class="input-xlarge" name="kfAccount.kfNick"	id="kfNick" value="${kfAccount.kfNick }" checkType="string,1,500"  tip="请输入昵称，昵称不能为空"  />
 									</div>
 								</div>
-								<c:if test="${empty(kfAccount) }">
+								<%-- <c:if test="${empty(kfAccount) }">
 									<div class="control-group">
 										<label class="control-label">密码：</label>
 										<div class="controls">
@@ -94,7 +94,7 @@
 											<p>请输入6-16位的密码</p>
 										</div>
 									</div>
-								</c:if>
+								</c:if> --%>
 								<div class="form-actions">
 									<a href="javascript:void(-1)" class="btn btn-primary"	onclick="submitAjaxForm('frmId','${ctx}/kfAccount/save')">
 										<i class="icon-ok-sign icon-white"></i>保存

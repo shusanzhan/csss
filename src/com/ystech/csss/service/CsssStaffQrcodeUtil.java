@@ -27,7 +27,7 @@ public class CsssStaffQrcodeUtil
       String json = "{\"action_name\":\"QR_LIMIT_STR_SCENE\", \"action_info\": {\"scene\": {\"scene_str\": \"" + sceneStr + "\"}}}";
       JSONObject jsonObject = WeixinUtil.httpRequest(createQrCodeUrl, "POST", json);
       ErrorMessage errorMessage = ErrorMessageUtil.paraseErrorMessage(jsonObject);
-      if (errorMessage == null)
+      if (errorMessage != null)
       {
         LogUtil.error("生成二维码发生错误，错误类型" + jsonObject);
         return null;

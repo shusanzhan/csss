@@ -11,9 +11,16 @@ public class ErrorMessageUtil
       if (jsonObject != null)
       {
         ErrorMessage errorMessage = new ErrorMessage();
-        String errcode = (String)jsonObject.get("errcode");
-        String errmsg = (String)jsonObject.get("errmsg");
-        errorMessage.setErrcode(errcode);
+        Object object = jsonObject.get("errcode");
+        String errcode=new String();
+        try {
+        	Integer errcodeInt =(Integer) object;
+        	errcode=errcodeInt+"";
+		} catch (Exception e) {
+			errcode=(String) object;
+		}
+        errorMessage.setErrcode(errcode+"");
+        String errmsg = jsonObject.getString("errmsg");
         errorMessage.setErrmsg(errmsg);
         return errorMessage;
       }
@@ -22,7 +29,7 @@ public class ErrorMessageUtil
     catch (Exception e)
     {
       e.printStackTrace();
+      return null;
     }
-    return null;
   }
 }

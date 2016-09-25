@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-9-18 17:58:15 by Hibernate Tools 4.0.0 -->
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-9-22 14:49:38 by Hibernate Tools 4.3.1.Final -->
 <hibernate-mapping>
     <class name="com.ystech.weixin.model.KfAccount" table="weixin_kfaccount" >
         <id name="dbid" type="java.lang.Integer">
@@ -11,17 +11,26 @@
         <property name="kfAccount" type="string">
             <column name="kf_account" length="500" />
         </property>
-        <property name="headImg" type="string">
-            <column name="headImg" length="500" />
+        <property name="kfNick" type="string">
+            <column name="kf_nick" length="500" />
         </property>
-        <property name="nickname" type="string">
-            <column name="nickname" length="500" />
+        <property name="kfId" type="string">
+            <column name="kf_id" />
         </property>
-        <property name="password" type="string">
-            <column name="password" />
+        <property name="kfWx" type="string">
+            <column name="kf_wx" />
         </property>
-        <property name="accountid" type="java.lang.Integer">
-            <column name="accountid" />
+        <property name="kfHeadimgurl" type="string">
+            <column name="kf_headimgurl" />
+        </property>
+        <property name="inviteWx" type="string">
+            <column name="invite_wx" />
+        </property>
+        <property name="inviteExpireTime" type="date">
+            <column name="invite_expire_time" length="10" />
+        </property>
+        <property name="inviteStatus" type="string">
+            <column name="invite_status" />
         </property>
     </class>
 </hibernate-mapping>

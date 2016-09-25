@@ -104,7 +104,7 @@ $().ready(function (K) {
 		// 加载内容
 		//CKEDITOR.instances.content.getData()
 		CKEDITOR.instances.content.setData($(".content", $msgItem).val());
-
+		alert($(".content", $msgItem).val());
 		// 文章来源
 		if ($(".from_url", $msgItem).val() == "") {
 			$("#url-block-link").show();
@@ -156,6 +156,7 @@ $().ready(function (K) {
 			var cover_url = $("input.cover_url", $msgItem).val();
 			var cover_show = $("input.cover_show", $msgItem).val();
 			var content = $("textarea.content", $msgItem).val();
+			alert(content);
 			var from_url = $("input.from_url", $msgItem).val();
 			if (title == "") {
 				$.utile.tips("标题不能为空")

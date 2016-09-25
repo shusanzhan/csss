@@ -1,4 +1,4 @@
-package com.ystech.weixin.model;
+package com.ystech.wexin.model;
 // Generated 2016-9-22 14:49:38 by Hibernate Tools 4.3.1.Final
 
 import java.util.Date;
@@ -9,21 +9,13 @@ import java.util.Date;
 public class KfAccount implements java.io.Serializable {
 
 	private Integer dbid;
-	//完整客服帐号，格式为：帐号前缀@公众号微信号
 	private String kfAccount;
-	//客服昵称
 	private String kfNick;
-	//客服编号
 	private String kfId;
-	//如果客服帐号已绑定了客服人员微信号，则此处显示微信号
-	private String kfWx;
-	//客服头像
+	private Integer kfWx;
 	private String kfHeadimgurl;
-	//如果客服帐号尚未绑定微信号，但是已经发起了一个绑定邀请，
 	private String inviteWx;
-	//如果客服帐号尚未绑定微信号，但是已经发起过一个绑定邀请，	邀请的过期时间，为unix 时间戳
 	private Date inviteExpireTime;
-	//邀请的状态，有等待确认“waiting”，被拒绝“rejected”，过期“expired”
 	private String inviteStatus;
 
 	public KfAccount() {
@@ -34,6 +26,7 @@ public class KfAccount implements java.io.Serializable {
 		this.kfAccount = kfAccount;
 		this.kfNick = kfNick;
 		this.kfId = kfId;
+		this.kfWx = kfWx;
 		this.kfHeadimgurl = kfHeadimgurl;
 		this.inviteWx = inviteWx;
 		this.inviteExpireTime = inviteExpireTime;
@@ -72,11 +65,11 @@ public class KfAccount implements java.io.Serializable {
 		this.kfId = kfId;
 	}
 
-	public String getKfWx() {
+	public Integer getKfWx() {
 		return this.kfWx;
 	}
 
-	public void setKfWx(String kfWx) {
+	public void setKfWx(Integer kfWx) {
 		this.kfWx = kfWx;
 	}
 

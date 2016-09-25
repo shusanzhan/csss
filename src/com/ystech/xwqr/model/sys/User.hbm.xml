@@ -33,6 +33,7 @@
             <column name="userState" length="20" />
         </property>
         
+        <many-to-one name="weixinAccount" class="com.ystech.weixin.model.WeixinAccount" column="weixinAccountId"  not-found="ignore"></many-to-one>
         <many-to-one name="department" class="com.ystech.xwqr.model.sys.Department" column="departmentId"  not-found="ignore"></many-to-one>
         <set name="roles" table="sys_userRoles" lazy="false">
 			<key column="userId"></key>

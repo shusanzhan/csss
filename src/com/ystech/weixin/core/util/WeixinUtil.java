@@ -75,14 +75,18 @@ public class WeixinUtil {
 	
 	
 	///////////////////客服管理接口////////////////
+	//客服管理 获取客服列表
+	public static String GETKFLIST="https://api.weixin.qq.com/cgi-bin/customservice/getkflist?access_token=ACCESS_TOKEN";
 	//客服管理 添加客服账号接口
 	public static String KFACCOUNTADD="https://api.weixin.qq.com/customservice/kfaccount/add?access_token=ACCESS_TOKEN";
+	//邀请绑定客服帐号
+	public static String INVITEWORKER="https://api.weixin.qq.com/customservice/kfaccount/inviteworker?access_token=ACCESS_TOKEN";
 	//客服管理 更新客服账号接口
 	public static String KFACCOUNTUPDATE="https://api.weixin.qq.com/customservice/kfaccount/update?access_token=ACCESS_TOKEN";
 	//客服管理 删除客服账号接口
 	public static String KFACCOUNTDELETE="https://api.weixin.qq.com/customservice/kfaccount/del?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT";
 	//客服管理 上传客服头像
-	public static String KFACCOUNTUPLOADINGIMAGE="http://api.weixin.qq.com/customservice/kfaccount/uploadheadimg?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT";
+	public static String KFACCOUNTUPLOADINGIMAGE="https://api.weixin.qq.com/customservice/kfaccount/uploadheadimg?access_token=ACCESS_TOKEN&kf_account=KFACCOUNT";
 	
 	//////////////////////////////////////群发接口//////////////////////////////////////////////////////
 	//根据分组进行群发(http请求方式: POST)
