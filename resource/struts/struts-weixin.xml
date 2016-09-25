@@ -71,6 +71,7 @@
 	<action name="kfAccount" class="kfAccountAction">
       		 <result name="list">/pages/weixin/kfAccount/list.jsp</result>
       		 <result name="edit">/pages/weixin/kfAccount/edit.jsp</result>
+      		 <result name="inviteworker">/pages/weixin/kfAccount/inviteworker.jsp</result>
      </action>
      <!-- 微信多媒体素材管理 -->
 	<action name="wechatMedia" class="wechatMediaAction">
