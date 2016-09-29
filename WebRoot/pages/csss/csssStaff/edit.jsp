@@ -132,7 +132,7 @@ $.utile.submitAjaxForm = function(frmId, url, state) {
 										// 保存失败时页面停留在数据编辑页面
 										setTimeout(
 												function() {
-													window.location.href = obj[0].url
+													window.location.href = "${ctx}/csssStaff/queryList";
 												}, 1000);
 									}
 									if (data[0].mark == 1) {// /返回标志为1表示保存数据失败
@@ -140,7 +140,7 @@ $.utile.submitAjaxForm = function(frmId, url, state) {
 										// 保存失败时页面停留在数据编辑页面
 										setTimeout(
 												function() {
-													window.location.href = obj[0].url
+													window.location.href = "${ctx}/csssStaff/queryList";
 												}, 1000);
 									}
 								})

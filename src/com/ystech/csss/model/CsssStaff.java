@@ -20,9 +20,13 @@ public class CsssStaff
   private Integer qrCodeStatus;
   private String sceneStr;
   private String ticket;
+  //二维码
   private String qrCode;
+  //二维码创建时间
   private Date qrCodeDate;
+  //扫描数量
   private Integer scannNum;
+  //引流数量
   private Integer leaderNum;
   private String note;
   

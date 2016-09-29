@@ -25,8 +25,11 @@
 	<div class="operate">
 		<a class="but button" href="javascript:void();" onclick="window.location.href='${ctx}/csssStaff/edit'">添加</a>
 		<a class="but button" href="javascript:void();" onclick="window.location.href='${ctx}/csssStaff/importExcel'">批量导入店员</a>
+		<a class="but button" href="javascript:void();" onclick="exportExcel('searchPageForm')">下载二维码</a>
+		<a class="but button" href="javascript:void();" onclick="qrBatchCreate()">批量生成二维码</a>
 		<a class="but butCancle" href="javascript:void(-1);" onclick="$.utile.deleteIds('${ctx }/csssStaff/delete','searchPageForm')">删除</a>
    </div>
+		<div id="errorMess1" style="float: left;display: none;" class="alert alert-error">正在批量生成二维码，请稍后再试.....</div>
   	<div class="seracrhOperate">
   		<form name="searchPageForm" id="searchPageForm" action="${ctx}/csssStaff/queryList" method="post">
 		<input type="hidden" id="currentPage" name="currentPage" value='${page.currentPageNo}'>
@@ -123,4 +126,32 @@
 	<%@ include file="../../commons/commonPagination.jsp" %>
 </div>
 </body>
+<script type="text/javascript">
+function exportExcel(searchFrm){
+ 	var params;
+ 	if(null!=searchFrm&&searchFrm!=undefined&&searchFrm!=''){
+ 		params=$("#"+searchFrm).serialize();
+ 	}
+ 	window.location.href='${ctx}/csssStaff/download?'+params;
+ }
+var status=1;
+function qrBatchCreate(){
+	if(status==2){
+		$("#errorMess1").hide();
+		return ;
+	}
+	status=2;
+	$("#errorMess1").show();
+	 $.post('${ctx}/csssStaff/qrBatchCreate',{},function (data){
+		if (data[0].mark == 0) {// 返回标志为0表示添加数据成功
+			$.utile.tips(data[0].message+"");
+			location.reload();
+		}
+		if (data[0].mark == 1) {// /返回标志为1表示保存数据失败
+			$.utile.tips(data[0].message);
+			// 保存失败时页面停留在数据编辑页面
+		}
+	})
+}
+</script>
 </html>
